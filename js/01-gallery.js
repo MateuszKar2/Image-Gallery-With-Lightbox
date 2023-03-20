@@ -6,4 +6,4 @@ const galleryCardsSet = createGallery(galleryItems);
 
 function createGallery(galleryItems) {
     return galleryItems
-    .map(({ original, preview, description})  
+    .map(({ original, preview, description}) 
