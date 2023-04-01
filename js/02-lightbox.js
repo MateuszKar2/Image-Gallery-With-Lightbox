@@ -5,10 +5,10 @@ import { galleryItems } from './gallery-items.js';
 //Wykorzystuję metodę .insertAdjacentHTML aby dodać string wewnątrz elementu po wszystkich dzieciach
 //Tworzę funkcję przekazując jej jako parametr "item"
 //Korzystam z metody .map która przyjmuje następujące parametry "preview"-mały obraz, "original"-duży obraz, "description"-opis obrazka.
-//Wukorzystanie metody .join do łączenia elementów tablicy w string
+//Wukorzystuje metodę .join do łączenia elementów tablicy w string
 //Stosuje podany szablon
 //Łącze elementy tablicy w string za pomocą metody .join
-//Skorzystać z biblioteki SIPLELIGHTBOX która zajmuje się opracowaniem kliknięc w obrazki,
+//Korzystam z biblioteki SIPLELIGHTBOX która zajmuje się opracowaniem kliknięc w obrazki,
 // => otwieraniem i zamykaniem okna modalnego oraz przewijaniem obrazków za pomocą klawiatury
  
  
