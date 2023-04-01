@@ -17,7 +17,7 @@ const gallery = document.querySelector(".gallery");
 //Wykorzystanie biblioteki "BASICLIGHTBOX" 
 //Przypisuje swojej instancji(basicLightbox) zmienną
 //Opiera się na prametrach- widoczny i zamknięty + modyfikuje zawartość(basicLightbox)
-//Wykorzystanie warunku "if" przypisującego escape do zamknięcia obrazka
+//Zamknięcie okna modalnego z klawiatury przycisk "Escape"
 //Wykorzystanie metody .show
 //-------------------------
 
