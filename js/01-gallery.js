@@ -8,8 +8,8 @@ const gallery = document.querySelector(".gallery");
 //Parametrami metody map. są: "preview"-mały obraz, "original"-duży obraz, "description"-opis obrazka.
 //Implementuje gotowy szablon gotowych tagów HTML/CSS wprowadzając zmienne
 //Łącze elementy tablicy w string za pomocą metody .join
-//Za pomocą metody .insert...("beforeend") dodaje ciąg znaków wewnątrz elementu po wszystkich dzieciach
-//Stosuje detektor zdarzeń(nazwę zdarzenia/ f. wywołania zwrotnego/ -)
+//Za pomocą metody .insertAdjacentHTML("beforeend") dodaje ciąg znaków wewnątrz elementu po wszystkich dzieciach
+//Stosuje detektor zdarzeń(nazwę zdarzenia/ f. wywołania zwrotnego
 //Funkcja wywołania zwrotnego(z pierwszym argumentem-"event")
 //Kasuje domyślne działanie przeglądarki za pomocą metody dla eventu tj.preventDefault();
 //Stosuje warunek "if", i "event.target"
@@ -20,6 +20,30 @@ const gallery = document.querySelector(".gallery");
 //Zamknięcie okna modalnego z klawiatury przycisk "Escape"
 //Wykorzystanie metody .show
 //-------------------------
+
+const markup = galleryItems.map(({ preview, original, description }) => {
+    return `<div class="gallery__item">
+    <a class="gallery__link" href="${original}">
+    <img
+    class="gallery__image"
+    src="${preview}"
+    data-source="${original}"
+    alt="${description}"/></a></div>` ;})
+    .join("");
+
+gallery.insertAdjacentHTML("beforeend", markup);
+
+gallery.addEventListener('click', selectGalleryItem);
+
+function selectGalleryItem(event) {
+    event.preventDefault();
+    if (event.target.nodeName !== 'IMG') {
+        return;
+    }
+}
+//Przerwa===================================>//
+
+
 
 
 const markup = galleryItems.map(({ preview, original, description }) => {
