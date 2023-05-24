@@ -15,7 +15,9 @@ const gallery = document.querySelector(".gallery");
 //Stosuje warunek "if", i "event.target"
 //Przy pomocy .nodeName sprawdzam typ elementu
 //Wykorzystanie biblioteki "BASICLIGHTBOX" 
+//Gdzie istnieje programowa metoda na zamknięcie okna modalnego
 //Przypisuje swojej instancji(basicLightbox) zmienną
+//Korzystam z "dataset"- jest to obiekt, którego kolejne właśćiwości są budowane na bazie niestandardowych atrybutów
 //Opiera się na prametrach- widoczny i zamknięty + modyfikuje zawartość(basicLightbox)
 //Zamknięcie okna modalnego z klawiatury przycisk "Escape"
 //Wykorzystanie metody .show
@@ -23,50 +25,25 @@ const gallery = document.querySelector(".gallery");
 
 const markup = galleryItems.map(({ preview, original, description }) => {
     return `<div class="gallery__item">
-    <a class="gallery__link" href="${original}">
-    <img
-    class="gallery__image"
-    src="${preview}"
-    data-source="${original}"
-    alt="${description}"/></a></div>` ;})
+<a class="gallery__link" href="${original}">
+<img
+class="gallery__image"
+src="${preview}"
+data-source="${original}"
+alt="${description}"/></a></div>`;})
     .join("");
+ 
 
 gallery.insertAdjacentHTML("beforeend", markup);
+
 
 gallery.addEventListener('click', selectGalleryItem);
 
 function selectGalleryItem(event) {
     event.preventDefault();
-    if (event.target.nodeName !== 'IMG') {
+   if (event.target.nodeName !== 'IMG') {
         return;
     }
-}
-//Przerwa===================================>//
-
-
-
-
-const markup = galleryItems.map(({ preview, original, description }) => {
-     return `<div class="gallery__item">
- <a class="gallery__link" href="${original}">
- <img
- class="gallery__image"
- src="${preview}"
- data-source="${original}"
- alt="${description}"/></a></div>`;})
-     .join("");
-  
- 
- gallery.insertAdjacentHTML("beforeend", markup);
-
-
- gallery.addEventListener('click', selectGalleryItem);
-
- function selectGalleryItem(event) {
-     event.preventDefault();
-    if (event.target.nodeName !== 'IMG') {
-         return;
-     }
 
      const instance = basicLightbox.create(
         `<img src="${event.target.dataset.source}" width="800" height="600">`,
