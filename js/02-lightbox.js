@@ -1,23 +1,21 @@
 import { galleryItems } from './gallery-items.js';
-// Change code below this line
 //-----------------------------------
 //Pobiem galerię za pomocą querySelector
 //Wykorzystuję metodę .insertAdjacentHTML aby dodać string wewnątrz elementu po wszystkich dzieciach
 //Tworzę funkcję przekazując jej jako parametr "item"
 //Korzystam z metody .map która przyjmuje następujące parametry "preview"-mały obraz, "original"-duży obraz, "description"-opis obrazka.
-//Wukorzystuje metodę .join do łączenia elementów tablicy w string
-//Stosuje podany szablon
-//Łącze elementy tablicy w string za pomocą metody .join
+//Modyfikuje podany szablon HTML
+//Wukorzystuje metodę .join do łączenia elementów tablicy w string, nieznacznie zmieniając znacznik galerii
 //Korzystam z biblioteki SIPLELIGHTBOX która zajmuje się opracowaniem kliknięc w obrazki,
-// => otwieraniem i zamykaniem okna modalnego oraz przewijaniem obrazków za pomocą klawiatury
+//Która posiada takie właściwości jak otwieranie i zamykaniem okna modalnego oraz przewijaniem obrazków za pomocą klawiatury
  
  
 //-----------------------------------
 const gallery = document.querySelector(".gallery");
- const markup = createItemsMarkup(galleryItems);
+const markup = createItemsMarkup(galleryItems);
+
+
  gallery.insertAdjacentHTML("beforeend", markup);
-
-
 
  function createItemsMarkup(item) {
  return galleryItems
@@ -28,10 +26,8 @@ const gallery = document.querySelector(".gallery");
  class="gallery__image"
  src="${preview}"
  alt="${description}"/></a></div>`;})
-     .join("");
-  
+     .join(""); 
  }
-
 
 const lightbox = new SimpleLightbox('.gallery a', {
   caption: true,
