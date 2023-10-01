@@ -2,7 +2,7 @@ import { galleryItems } from './gallery-items.js';
 // Change code below this line
 
 const gallery = document.querySelector(".gallery");
-// -------------------------
+// ------------------------
 //Pobieram galerię za pomocą querySelector
 //Wykorzystuję metodę .map, celem otrzymania przekształconej kopii tablicy
 //Parametrami metody map. są: "preview"-mały obraz, "original"-duży obraz, "description"-opis obrazka.
