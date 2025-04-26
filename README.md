@@ -25,12 +25,3 @@ This project demonstrates how to dynamically generate an image gallery using Jav
    git clone https://github.com/MateuszKar2/goit.js-hw-07.git
 
 
-   image-gallery-with-lightbox/
-├── index.html
-├── css/
-│   └── styles.css
-├── js/
-│   └── gallery.js
-├── images/
-│   └── [gallery images]
-└── README.md
