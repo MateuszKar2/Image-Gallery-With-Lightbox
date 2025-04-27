@@ -1,4 +1,4 @@
-# 🖼️ Image Gallery with Lightbox
+ # 🖼️ Image Gallery with Lightbox
 
 ## 📄 Description
 
